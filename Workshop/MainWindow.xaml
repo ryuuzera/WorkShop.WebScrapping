@@ -35,11 +35,11 @@
             </Grid.RowDefinitions>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 15 15 0">
-                <TextBlock x:Name="timeTextBlock" Text="05:00" Foreground="White" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock x:Name="timeTextBlock"  Foreground="White" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
                 <StackPanel Margin="13 0" VerticalAlignment="Center">
-                    <TextBlock x:Name="dateTextBlock" Text="Nov, 17" Foreground="White" FontSize="10" VerticalAlignment="Center"/>
-                    <TextBlock x:Name="dayTextBlock" Text="Tuesday" Foreground="White" FontSize="10" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="dateTextBlock"  Foreground="White" FontSize="10" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="dayTextBlock" Foreground="White" FontSize="10" VerticalAlignment="Center"/>
                 </StackPanel>
                 <Button Background="Transparent" Click="Button_Click">
                     <Icon:PackIconMaterial VerticalAlignment="Center" Kind="Close" Foreground="#fdf9f6" Width="25" Height="25"/>
@@ -93,8 +93,11 @@
                 <!-- moedas -->
                 <TextBlock Visibility="Collapsed" Foreground="White" x:Name="dolarHoje" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
                 <TextBlock Visibility="Collapsed" Foreground="White" x:Name="euroHoje" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="bitcoinHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
+                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="ienenHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
+                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="yuanHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
+                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="bitcoinHoje" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
                 <TextBlock Visibility="Collapsed" Foreground="White" x:Name="pesoHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
+                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="ouroHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
                 <!-- esporte -->
                 <TextBlock Visibility="Collapsed" Foreground="White" x:Name="resultado1" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
                 <TextBlock Visibility="Collapsed" Foreground="White" x:Name="resultado2" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />

@@ -48,7 +48,7 @@ namespace Workshop
         private void InitializeTimer()
         {
             timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1); // Atualiza a cada segundo
+            timer.Interval = TimeSpan.FromSeconds(1); 
             timer.Tick += Timer_Tick;
             timer.Start();
         }
@@ -102,8 +102,11 @@ namespace Workshop
             {
                { "Dolar", "http://dolarhoje.com" },
                { "Euro", "https://dolarhoje.com/euro-hoje/" },
+               { "Iene", "https://dolarhoje.com/iene/" },
+               { "Yuan", "https://dolarhoje.com/yuan-hoje/" },
                { "Bitcoin", "https://dolarhoje.com/bitcoin-hoje/" },
                { "Peso", "https://dolarhoje.com/peso-argentino/" },
+               { "Ouro", "https://dolarhoje.com/ouro-hoje/" }, 
             };
 
             foreach (var endpoint in endpoints)
@@ -116,10 +119,8 @@ namespace Workshop
 
                 if (textField != null)
                 {
-
                     textField.Text = $"{endpoint.Key}: R$ {ConvertToBRL(resultValue)}";
                     textField.Visibility = Visibility.Visible;
-
                 };
             }
         }
@@ -179,13 +180,11 @@ namespace Workshop
 
             foreach (var item in resultObj)
             {
-                if ((item["type"].ToString() != "7") || (item["licences"]?[0]?["price"]?["text"]?.ToString() == "0")) continue;
-                _plans.Add(item);
+                if ((item["type"]?.ToString() != "7") || (item["licences"]?[0]?["price"]?["text"]?.ToString() == "0")) continue;
+                _plans?.Add(item);
                 aggerProducts.Children.Add(CreateAggerProductCard(item));
 
             }
-
-            //var productsCards = pageDom["#planos_section"];
 
         }
 
@@ -198,7 +197,7 @@ namespace Workshop
 
         public Border CreateAggerProductCard(JsonObject plan)
         {
-            // Cria o Card
+
             Border card = new Border
             {
                 Background = Brushes.White,
@@ -206,7 +205,6 @@ namespace Workshop
                 Margin = new Thickness(10)
             };
 
-            // Cria o StackPanel
             StackPanel stackPanel = new StackPanel
             {
                 Width = 200,
@@ -214,7 +212,6 @@ namespace Workshop
                 VerticalAlignment = VerticalAlignment.Center
             };
 
-            // Cria o primeiro TextBlock
             TextBlock titleTextBlock = new TextBlock
             {
                 Text = plan["key"]?.ToString(),
@@ -223,7 +220,6 @@ namespace Workshop
                 FontWeight = FontWeights.SemiBold
             };
 
-            // Cria o ComboBox
             ComboBox comboBox = new ComboBox
             {
                 Name = $"combo{plan["key"]?.ToString().Replace(" ", string.Empty)}",
@@ -241,15 +237,15 @@ namespace Workshop
 
             comboBox.SelectionChanged += (s, e) =>
             {
-                string selectedItem = comboBox.SelectedItem.ToString();
+                string? selectedItem = comboBox.SelectedItem.ToString();
 
                 foreach (var planItem in _plans)
                 {
-                    JsonObject planObj = JsonSerializer.Deserialize<JsonObject>(planItem.ToString());
+                    JsonObject? planObj = JsonSerializer.Deserialize<JsonObject>(planItem.ToString());
 
                     foreach (var item in planObj["licences"]?.AsArray())
                     {
-                        if (selectedItem == item["description"]?.ToString() && (s as ComboBox).Name == $"combo{ planItem["key"]?.ToString().Replace(" ", string.Empty)}")
+                        if (selectedItem == item?["description"]?.ToString() && (s as ComboBox).Name == $"combo{ planItem["key"]?.ToString().Replace(" ", string.Empty)}")
                         {
                             TextBlock textField = (TextBlock)this.FindName($"{planItem["key"]?.ToString().Replace(" ", string.Empty)}Price");
                             if (textField != null)
@@ -265,7 +261,7 @@ namespace Workshop
                 }
                 
             };
-            // Cria o TextBlock para "R$"
+
             TextBlock currencyTextBlock = new TextBlock
             {
                 Text = "R$",
@@ -275,7 +271,6 @@ namespace Workshop
                 Margin = new Thickness(10)
             };
 
-            // Cria o TextBlock para o preço
             TextBlock priceTextBlock = new TextBlock
             {
                 Name = $"{plan["key"]?.ToString().Replace(" ", string.Empty)}Price",
@@ -288,7 +283,7 @@ namespace Workshop
 
             this.RegisterName($"{plan["key"]?.ToString().Replace(" ", string.Empty)}Price", priceTextBlock);
             _namesRegistered.Add($"{plan["key"]?.ToString().Replace(" ", string.Empty)}Price");
-            // Cria o TextBlock para "/mês"
+
             TextBlock perMonthTextBlock = new TextBlock
             {
                 Text = "/mês",
@@ -298,7 +293,7 @@ namespace Workshop
                 Margin = new Thickness(10)
             };
 
-            // Cria o Button
+   
             Button button = new Button
             {
                 Content = "CONTRATE",
@@ -310,7 +305,6 @@ namespace Workshop
                 Margin = new Thickness(20)
             };
 
-            // Adiciona todos os elementos ao StackPanel
             stackPanel.Children.Add(titleTextBlock);
             stackPanel.Children.Add(comboBox);
             stackPanel.Children.Add(currencyTextBlock);
@@ -318,7 +312,6 @@ namespace Workshop
             stackPanel.Children.Add(perMonthTextBlock);
             stackPanel.Children.Add(button);
 
-            // Adiciona o StackPanel ao Border
             card.Child = stackPanel;
 
             return card;
