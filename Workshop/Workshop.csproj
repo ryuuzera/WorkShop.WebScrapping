@@ -9,6 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\**" />
+    <Compile Remove="UserControls\**" />
+    <EmbeddedResource Remove="Pages\**" />
+    <EmbeddedResource Remove="UserControls\**" />
+    <None Remove="Pages\**" />
+    <None Remove="UserControls\**" />
+    <Page Remove="Pages\**" />
+    <Page Remove="UserControls\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\Images\logo.png" />
     <None Remove="Resources\Images\times\amazonas-fc-19747.png" />
     <None Remove="Resources\Images\times\America-MG-branco.png" />
@@ -43,11 +54,6 @@
     <PackageReference Include="Selenium.Chrome.WebDriver" Version="85.0.0" />
     <PackageReference Include="Selenium.Support" Version="4.21.0" />
     <PackageReference Include="Selenium.WebDriver" Version="4.21.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="UserControls\" />
-    <Folder Include="Pages\" />
   </ItemGroup>
 
   <ItemGroup>

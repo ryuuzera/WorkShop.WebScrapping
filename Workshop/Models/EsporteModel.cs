@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace Workshop.Models
 {
-
     public class Equipe
     {
         [JsonPropertyName("escudo")]
@@ -59,7 +53,7 @@ namespace Workshop.Models
         public string? Url { get; set; }
     }
 
-    public class Jogo
+    public class FootbalGame
     {
         [JsonPropertyName("data_realizacao")]
         public DateTime DataRealizacao { get; set; }
