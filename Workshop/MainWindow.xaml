@@ -41,7 +41,7 @@
                     <TextBlock x:Name="dateTextBlock"  Foreground="White" FontSize="10" VerticalAlignment="Center"/>
                     <TextBlock x:Name="dayTextBlock" Foreground="White" FontSize="10" VerticalAlignment="Center"/>
                 </StackPanel>
-                <Button Background="Transparent" Click="Button_Click">
+                <Button Background="Transparent" Click="Button_Click" BorderBrush="Transparent">
                     <Icon:PackIconMaterial VerticalAlignment="Center" Kind="Close" Foreground="#fdf9f6" Width="25" Height="25"/>
 
                 </Button>
@@ -89,25 +89,9 @@
                     </VirtualizingStackPanel>
                 </ScrollViewer>
 
-
                 <DockPanel Panel.ZIndex="2" Height="500" Width="auto" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="workshopLogo" Visibility="Visible" >
                     <Image Height="300" VerticalAlignment="Center" Source="/Resources/Images/logo.png" />
                 </DockPanel>
-
-                <!-- moedas -->
-                <!--
-                        <TextBlock Visibility="Collapsed" Foreground="White" x:Name="dolarHoje" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                        <TextBlock Visibility="Collapsed" Foreground="White" x:Name="euroHoje" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                        <TextBlock Visibility="Collapsed" Foreground="White" x:Name="ienenHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                        <TextBlock Visibility="Collapsed" Foreground="White" x:Name="yuanHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                        <TextBlock Visibility="Collapsed" Foreground="White" x:Name="bitcoinHoje" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                        <TextBlock Visibility="Collapsed" Foreground="White" x:Name="pesoHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                        <TextBlock Visibility="Collapsed" Foreground="White" x:Name="ouroHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                        -->
-               
-                <StackPanel x:Name="aggerProducts" Visibility="Visible" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
-
-                </StackPanel>
 
             </StackPanel>
         </Grid>

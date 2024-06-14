@@ -204,6 +204,8 @@ namespace Workshop
         }
         private void getFootbalResults()
         {
+            renderPanel.Orientation = Orientation.Vertical;
+
             var endpoint = "https://ge.globo.com/futebol/brasileirao-serie-a/";
           
             CQ resultResponse = httpClient.GetAsync(endpoint).Result.Content.ReadAsStringAsync().Result;
@@ -281,6 +283,8 @@ namespace Workshop
         }
         private void getCurrentValues()
         {
+            renderPanel.Orientation = Orientation.Vertical;
+
             var endpoints = new Dictionary<string, string>
             {
                { "Dolar", "http://dolarhoje.com" },
@@ -322,8 +326,7 @@ namespace Workshop
 
         private void HideAll()
         {
-            aggerProducts.Visibility = System.Windows.Visibility.Collapsed;
-      
+ 
             foreach (UIElement element in resultPanel.Children)
             {
                 if (element is TextBlock)
@@ -338,11 +341,9 @@ namespace Workshop
 
         private void getAggerProducts()
         {
-            aggerProducts.Visibility = System.Windows.Visibility.Visible;
+            renderPanel.Orientation = Orientation.Horizontal;
 
             if (plans?.Count > 0) plans?.Clear();
-
-            aggerProducts.Children.Clear();
 
             foreach (var name in namesRegistered)
             {
@@ -356,11 +357,12 @@ namespace Workshop
 
             List<Plan> resultObj = JsonSerializer.Deserialize<List<Plan>>(result)!;
 
+           
             foreach (var item in resultObj)
             {
                 if ((item.Type != "7") || (item.Licences[0].Price.Text == "0")) continue;
                 plans?.Add(item);
-                aggerProducts.Children.Add(CreateAggerProductCard(item));
+                renderPanel.Children.Add(CreateAggerProductCard(item));
 
             }
 
