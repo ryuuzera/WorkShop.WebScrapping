@@ -135,7 +135,11 @@ namespace Workshop.Services.FootballResult
             {
                 try
                 {
-                    var processInfo = new ProcessStartInfo(args.Uri.OriginalString);
+                    var processInfo = new ProcessStartInfo
+                    {
+                        FileName = args.Uri.OriginalString,
+                        UseShellExecute = true,
+                    };
 
                     Process.Start(processInfo);
                 }
