@@ -15,15 +15,15 @@ namespace Workshop.Services.ExchangeRate
     {
         private readonly ExchangeRateComponentFactory componentFactory;
 
-        private Dictionary<string, Uri> Links = new Dictionary<string, Uri>
+        private List<Uri> Links = new List<Uri>
         {
-           { "Dolar", new Uri("http://dolarhoje.com") },
-           { "Euro", new Uri("https://dolarhoje.com/euro-hoje/") },
-           { "Iene", new Uri("https://dolarhoje.com/iene/") },
-           { "Yuan", new Uri("https://dolarhoje.com/yuan-hoje/") },
-           { "Bitcoin", new Uri("https://dolarhoje.com/bitcoin-hoje/") },
-           { "Peso", new Uri("https://dolarhoje.com/peso-argentino/") },
-           { "Ouro", new Uri("https://dolarhoje.com/ouro-hoje/") },
+           {  new Uri("http://dolarhoje.com") },
+           { new Uri("https://dolarhoje.com/euro-hoje/") },
+           {  new Uri("https://dolarhoje.com/iene/") },
+           { new Uri("https://dolarhoje.com/yuan-hoje/") },
+           {  new Uri("https://dolarhoje.com/bitcoin-hoje/") },
+           { new Uri("https://dolarhoje.com/peso-argentino/") },
+           {  new Uri("https://dolarhoje.com/ouro-hoje/") },
         };
         public ExchangeRateScrapper() {
             componentFactory = new ExchangeRateComponentFactory();
@@ -37,7 +37,7 @@ namespace Workshop.Services.ExchangeRate
             {
                 try
                 {
-                    CQ resultResponse = httpClient.GetAsync(link.Value).Result.Content.ReadAsStringAsync().Result;
+                    CQ resultResponse = httpClient.GetAsync(link).Result.Content.ReadAsStringAsync().Result;
 
                     var exchangeRate = new ExchangeRateModel();
 

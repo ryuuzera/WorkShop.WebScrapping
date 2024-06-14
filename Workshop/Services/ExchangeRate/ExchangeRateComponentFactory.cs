@@ -53,10 +53,10 @@ namespace Workshop.Services.ExchangeRate
 
             stackPanel.Children.Add(CreateTextBlock(model.StrangeCoin, Colors.LightGray, 32));
             stackPanel.Children.Add(CreateTextBlock(model.StrangeValue, Colors.White, 32));
-            stackPanel.Children.Add(CreateTextBlock("vale", (Color)ColorConverter.ConvertFromString("#8299fa"), 22, new Thickness(5, 0, 5, 0)));
+            stackPanel.Children.Add(CreateTextBlock("vale", (Color)ColorConverter.ConvertFromString("#8299fa"), 18, new Thickness(8, 0, 8, 0)));
             stackPanel.Children.Add(CreateTextBlock(model.LocalCoin, Colors.LightGray, 32));
             stackPanel.Children.Add(CreateTextBlock(model.LocalValue, Colors.White, 32));
-            stackPanel.Children.Add(CreateTextBlock("hoje", (Color)ColorConverter.ConvertFromString("#8299fa"), 22, new Thickness(5, 0, 0, 0)));
+            stackPanel.Children.Add(CreateTextBlock("hoje", (Color)ColorConverter.ConvertFromString("#8299fa"), 18, new Thickness(5, 0, 0, 0)));
 
             horizontalPanel.Children.Add(stackPanel);
 
