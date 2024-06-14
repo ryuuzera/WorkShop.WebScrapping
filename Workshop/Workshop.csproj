@@ -9,13 +9,72 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Images\logo.png" />
+    <None Remove="Resources\Images\times\amazonas-fc-19747.png" />
+    <None Remove="Resources\Images\times\America-MG-branco.png" />
+    <None Remove="Resources\Images\times\Athletico-PR.png" />
+    <None Remove="Resources\Images\times\atletico-go-2020.png" />
+    <None Remove="Resources\Images\times\atletico-mg.png" />
+    <None Remove="Resources\Images\times\ava%25C3%25AD.png" />
+    <None Remove="Resources\Images\times\avaí.png" />
+    <None Remove="Resources\Images\times\bahia.png" />
+    <None Remove="Resources\Images\times\BFC.png" />
+    <None Remove="Resources\Images\times\botafogo-svg.png" />
+    <None Remove="Resources\Images\times\bragantino.png" />
+    <None Remove="Resources\Images\times\Corinthians.png" />
+    <None Remove="Resources\Images\times\Criciuma-2024.png" />
+    <None Remove="Resources\Images\times\cruzeiro_2021.png" />
+    <None Remove="Resources\Images\times\Cuiaba_EC.png" />
+    <None Remove="Resources\Images\times\escudo-vitoria-svg-69281.png" />
+    <None Remove="Resources\Images\times\Flamengo-2018.png" />
+    <None Remove="Resources\Images\times\fluminense.png" />
+    <None Remove="Resources\Images\times\Fortaleza_2021_1.png" />
+    <None Remove="Resources\Images\times\gremio.png" />
+    <None Remove="Resources\Images\times\internacional.png" />
+    <None Remove="Resources\Images\times\Juventude-2021-01.png" />
+    <None Remove="Resources\Images\times\Palmeiras.png" />
+    <None Remove="Resources\Images\times\sao-paulo.png" />
+    <None Remove="Resources\Images\times\vasco_SVG.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CsQuery" Version="1.3.4" />
     <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="5.0.0" />
+    <PackageReference Include="Selenium.Chrome.WebDriver" Version="85.0.0" />
+    <PackageReference Include="Selenium.Support" Version="4.21.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.21.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="UserControls\" />
     <Folder Include="Pages\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\logo.png" />
+    <Resource Include="Resources\Images\times\amazonas-fc-19747.png" />
+    <Resource Include="Resources\Images\times\America-MG-branco.png" />
+    <Resource Include="Resources\Images\times\Athletico-PR.png" />
+    <Resource Include="Resources\Images\times\atletico-go-2020.png" />
+    <Resource Include="Resources\Images\times\atletico-mg.png" />
+    <Resource Include="Resources\Images\times\bahia.png" />
+    <Resource Include="Resources\Images\times\BFC.png" />
+    <Resource Include="Resources\Images\times\botafogo-svg.png" />
+    <Resource Include="Resources\Images\times\bragantino.png" />
+    <Resource Include="Resources\Images\times\Corinthians.png" />
+    <Resource Include="Resources\Images\times\Criciuma-2024.png" />
+    <Resource Include="Resources\Images\times\cruzeiro_2021.png" />
+    <Resource Include="Resources\Images\times\Cuiaba_EC.png" />
+    <Resource Include="Resources\Images\times\escudo-vitoria-svg-69281.png" />
+    <Resource Include="Resources\Images\times\Flamengo-2018.png" />
+    <Resource Include="Resources\Images\times\fluminense.png" />
+    <Resource Include="Resources\Images\times\Fortaleza_2021_1.png" />
+    <Resource Include="Resources\Images\times\gremio.png" />
+    <Resource Include="Resources\Images\times\internacional.png" />
+    <Resource Include="Resources\Images\times\Juventude-2021-01.png" />
+    <Resource Include="Resources\Images\times\Palmeiras.png" />
+    <Resource Include="Resources\Images\times\sao-paulo.png" />
+    <Resource Include="Resources\Images\times\vasco_SVG.png" />
   </ItemGroup>
 
 </Project>

@@ -7,23 +7,23 @@
         xmlns:local="clr-namespace:Workshop"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="900"
-        MinHeight="700"
+        MaxHeight="720"
         WindowStartupLocation="CenterScreen"
         AllowsTransparency="True"
         WindowStyle="None"
         Background="Transparent"
         >
-    
+
 
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0" ResizeBorderThickness="5"/>
     </WindowChrome.WindowChrome>
-    <Border CornerRadius="5" MouseLeftButtonDown="Border_MouseLeftButtonDown" MouseDown="Border_MouseDown">
+    <Border CornerRadius="5" MouseLeftButtonDown="Border_MouseDown">
         <Border.Background>
             <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5,1">
                 <GradientStop Color="#2e3967" />
                 <GradientStop Color="#192559" Offset="1.0" />
-                
+
             </LinearGradientBrush>
         </Border.Background>
 
@@ -43,13 +43,9 @@
                 </StackPanel>
                 <Button Background="Transparent" Click="Button_Click">
                     <Icon:PackIconMaterial VerticalAlignment="Center" Kind="Close" Foreground="#fdf9f6" Width="25" Height="25"/>
-                    
+
                 </Button>
             </StackPanel>
-
-            <Button x:Name="backButton" Click="backButton_Click" Style="{StaticResource backButton}">
-                <Icon:PackIconMaterial Kind="ArrowLeft" Width="25" Height="25" />
-            </Button>
 
             <TextBlock Text="WorkShop - Web Scraping" Name="titleText" Style="{StaticResource pageTitle}" />
             <StackPanel Orientation="Vertical" Grid.Row="2" x:Name="resultPanel">
@@ -63,20 +59,20 @@
                             </ControlTemplate>
                         </Button.Template>
                         <Button.Content>
-                            <TextBlock FontSize="18" Foreground="Black" Text="Buscar Cotações" />
+                            <TextBlock FontSize="18" Foreground="Black" Text="Buscar Cotações" FontWeight="SemiBold"/>
                         </Button.Content>
                     </Button>
-                    <Button Click="getFootball_Click" x:Name="getFootball" Background="#ffd526" Foreground="Black" Height="39" Width="184" Margin="15 15 0 0" HorizontalAlignment="Center">
+                    <Button  FontWeight="SemiBold" Click="getFootball_Click" x:Name="getFootball" Background="#ffd526" Foreground="Black" Height="39" Width="184" Margin="15 15 0 0" HorizontalAlignment="Center">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
-                                <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <Border CornerRadius="5" Background="{TemplateBinding Background}"  BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
                         <TextBlock FontSize="18" Foreground="Black" Text="Buscar Jogos" />
                     </Button>
-                    <Button Click="buttonAggerProducts_Click" x:Name="buttonAggerProducts" Background="#ffd526" Foreground="Black" Height="38" Width="184" Margin="15 15 0 0" HorizontalAlignment="Center">
+                    <Button  FontWeight="SemiBold" Click="buttonAggerProducts_Click" x:Name="buttonAggerProducts" Background="#ffd526" Foreground="Black" Height="38" Width="184" Margin="15 15 0 0" HorizontalAlignment="Center">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
@@ -87,33 +83,35 @@
                         <TextBlock FontSize="18" Foreground="Black" Text="Produtos Agger" />
                     </Button>
                 </StackPanel>
+                <ScrollViewer  VerticalScrollBarVisibility="Auto" MaxHeight="530">
+                    <VirtualizingStackPanel x:Name="renderPanel" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+                    </VirtualizingStackPanel>
+                </ScrollViewer>
+
+
                 <DockPanel Panel.ZIndex="2" Height="500" Width="auto" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="workshopLogo" Visibility="Visible" >
-                    <Image Source="Resources/Images/logo.png" Height="300" VerticalAlignment="Center" />
+                    <Image Height="300" VerticalAlignment="Center" Source="/Resources/Images/logo.png" />
                 </DockPanel>
+
                 <!-- moedas -->
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="dolarHoje" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="euroHoje" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="ienenHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="yuanHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="bitcoinHoje" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="pesoHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="ouroHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <!-- esporte -->
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="resultado1" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="resultado2" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="resultado3" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="resultado4" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="resultado5" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="resultado6" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="resultado7" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="resultado8" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="resultado9" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
-                <TextBlock Visibility="Collapsed" Foreground="White" x:Name="resultado10" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
+                <!--
+                        <TextBlock Visibility="Collapsed" Foreground="White" x:Name="dolarHoje" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
+                        <TextBlock Visibility="Collapsed" Foreground="White" x:Name="euroHoje" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
+                        <TextBlock Visibility="Collapsed" Foreground="White" x:Name="ienenHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
+                        <TextBlock Visibility="Collapsed" Foreground="White" x:Name="yuanHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
+                        <TextBlock Visibility="Collapsed" Foreground="White" x:Name="bitcoinHoje" Text="Teste" FontSize="22" Height="30" Width="auto" HorizontalAlignment="Left" Margin="15 15 0 0" />
+                        <TextBlock Visibility="Collapsed" Foreground="White" x:Name="pesoHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
+                        <TextBlock Visibility="Collapsed" Foreground="White" x:Name="ouroHoje" Text="Teste" FontSize="22" Height="30" Width="300" HorizontalAlignment="Left" Margin="15 15 0 0" />
+                        -->
+               
                 <StackPanel x:Name="aggerProducts" Visibility="Visible" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
-                   
+
                 </StackPanel>
+
             </StackPanel>
         </Grid>
+    
     </Border>
-  
+
 </Window>
